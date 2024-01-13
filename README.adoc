@@ -1,1 +1,31 @@
-# Learning Ansible
+= Learning Ansible
+
+
+== Vagrant
+
+[source,bash]
+----
+
+brew install --cask virtualbox
+brew install --cask vagrant
+
+vagrant init ubuntu/jammy64
+
+vagrant up
+vagrant halt
+vagrant destroy
+
+# ssh into the VM
+vagrant ssh
+vagrant ssh-config
+
+vagrant provision
+----
+
+Default username and password is "vagrant"
+
+
+config.vm.provision "shell", path: "install-desktop.sh"
+
+
+https://github.com/heidemn/vagrant-bionic-desktop/blob/master/install-desktop.sh
