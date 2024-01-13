@@ -1,0 +1,13 @@
+---
+# as the VM is provisioned by Vagrant, it will tell Ansible
+# that the running VMs are available
+- hosts: all
+  become: yes # act as sudo
+  tasks:
+    - name: Ensure NTP is installed
+      apt: update_cache=true name=ntp state=present
+    - name: Ensure NTP is running
+      service:
+        name: ntp
+        state: started
+        enabled: yes # Whether the service should start on boot.
